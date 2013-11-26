@@ -1,5 +1,4 @@
-<?php
-defined('SYSPATH') OR die('No direct access allowed.');
+<?php defined('SYSPATH') OR die('No direct access allowed.');
 
 // require redbean
 $sep = DIRECTORY_SEPARATOR;
@@ -15,7 +14,8 @@ foreach ($cfg as $alias => $config) {
             $config['database']['dsn'],
             $config['database']['username'],
             $config['database']['password'],
-            $config['frozen']
+            $config['frozen'],
+            $config['auto_set_encoding']
         );
     } elseif (!in_array($alias, array('debug'))) {
         R::addDatabase(
@@ -23,7 +23,8 @@ foreach ($cfg as $alias => $config) {
             $config['database']['dsn'],
             $config['database']['username'],
             $config['database']['password'],
-            $config['frozen']
+            $config['frozen'],
+            $config['auto_set_encoding']
         );
     }
 }
