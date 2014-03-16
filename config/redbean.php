@@ -2,21 +2,23 @@
 
 return
     array(
-        'debug'     => false,
+        'debug'                  => false,
+        'strict_typing'          => true,
+        'beautiful_column_names' => true,
 
-        'default'   => array(
-            'frozen'   => false,
+        'default'                => array(
+            'frozen'            => false,
             'auto_set_encoding' => true,
-            'database' => array(
+            'database'          => array(
                 'dsn'      => 'mysql:host=localhost;dbname=dbname',
                 'username' => 'username',
                 'password' => 'password',
             )
         ),
-        'alternate' => array(
-            'frozen'   => true,
+        'alternate'              => array(
+            'frozen'            => true,
             'auto_set_encoding' => false,
-            'database' => array(
+            'database'          => array(
                 'dsn'      => 'mysql:host=localhost;dbname=dbname',
                 'username' => 'username',
                 'password' => 'password',

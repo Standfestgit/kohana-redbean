@@ -17,7 +17,7 @@ foreach ($cfg as $alias => $config) {
             $config['frozen'],
             $config['auto_set_encoding']
         );
-    } elseif (!in_array($alias, array('debug'))) {
+    } elseif (!in_array($alias, array('debug', 'strict_typing', 'beautiful_column_names'))) {
         R::addDatabase(
             $alias,
             $config['database']['dsn'],
@@ -29,7 +29,19 @@ foreach ($cfg as $alias => $config) {
     }
 }
 
+
 if (isset($cfg['debug']) && $cfg['debug'] === true) {
     R::debug(true);
 }
+
+if (isset($cfg['strict_typing']) && $cfg['strict_typing'] === false) {
+    R::setStrictTyping(false);
+}
+
+if (isset($cfg['beautiful_column_names']) && $cfg['beautiful_column_names'] === false) {
+    RedBean_OODBBean::setFlagBeautifulColumnNames(false);
+}
+
+
+
 
