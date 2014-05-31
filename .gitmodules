@@ -1,5 +1,0 @@
-[submodule "vendor/redbean"]
-	path = vendor/redbean
-	url = https://github.com/Standfestgit/redbean.git
-        branch = master
-
